@@ -4,149 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-/// =========================== All Project Tab controller================================
-var allProjectControl=[
-  projectElement(
-      projectTitle: "Food Ordering app",
-      featuresList: ["Responsive App","Pixel Perfect"],
-      skillUsedList: ["Flutter","Firebase","Firebase Auth","Firebase CRUD"],
-      projectImageSource: "lib/img8.jpg",
-      gitHubLink:"https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
-  ),
-  projectElement(
-      projectTitle: "Social media-Chat app",
-      featuresList: ["Responsive App","Pixel Perfect"],
-      skillUsedList: ["Flutter","Firebase","Firebase Auth","Firebase CRUD","Rest Api"],
-      projectImageSource: "lib/img7.png",
-      gitHubLink:"https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
-  ),
-  projectElement(
-      projectTitle: "Tech News app",
-      featuresList: ["Responsive App","Pixel Perfect"],
-      skillUsedList: ["Flutter","News api"],
-      projectImageSource: "lib/img5.jpg",
-      gitHubLink:"https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
-  ),
-  projectElement(
-      projectTitle: "Weather forecast app",
-      featuresList: ["Responsive App","Pixel Perfect"],
-      skillUsedList: ["Flutter","weathers api"],
-      projectImageSource: "lib/img4.jpg",
-      gitHubLink:"https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
-  ),
-  projectElement(
-      projectTitle: "Education app UI",
-      featuresList: ["Pixel Perfect"],
-      skillUsedList: ["Flutter"],
-      projectImageSource: "lib/img9.png",
-      gitHubLink:"https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
-  ),
-  projectElement(
-      projectTitle: "Wallpaper app",
-      featuresList: ["Responsive App","Pixel Perfect"],
-      skillUsedList: ["Flutter","Pixels api"],
-      projectImageSource: "lib/img6.jpg",
-      gitHubLink:"https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
-  ),
-  projectElement(
-      projectTitle: "whatsApp UI clone",
-      featuresList: ["Responsive Web-App"],
-      skillUsedList: ["Flutter"],
-      projectImageSource: "lib/img1.jpg",
-      gitHubLink:"https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
-  ),
-  projectElement(
-      projectTitle: "Tic Tac Toe game",
-      featuresList: ["Responsive game"],
-      skillUsedList: ["Flutter","Dart logic"],
-      projectImageSource: "lib/img2.jpg",
-      gitHubLink:"https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
-  ),
-  projectElement(
-      projectTitle: "Facebook UI clone",
-      featuresList: ["Responsive game","Pixel Perfect"],
-      skillUsedList: ["Flutter"],
-      projectImageSource: "lib/img3.jpg",
-      gitHubLink:"https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
-  ),
-
-];
-
-/// =========================== UI Project Tab controller ================================
-var uiProjectControl=[
-  projectElement(
-      projectTitle: "whatsApp UI clone",
-      featuresList: ["Responsive Web-App"],
-      skillUsedList: ["Flutter"],
-      projectImageSource: "lib/img1.jpg",
-      gitHubLink:"https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
-  ),
-  projectElement(
-      projectTitle: "Education app UI",
-      featuresList: ["Pixel Perfect"],
-      skillUsedList: ["Flutter"],
-      projectImageSource: "lib/img9.png",
-      gitHubLink:"https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
-  ),
-  projectElement(
-      projectTitle: "Tic Tac Toe game",
-      featuresList: ["Responsive game"],
-      skillUsedList: ["Flutter","Dart logic"],
-      projectImageSource: "lib/img2.jpg",
-      gitHubLink:"https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
-  ),
-  projectElement(
-      projectTitle: "Facebook UI clone",
-      featuresList: ["Responsive game"],
-      skillUsedList: ["Flutter"],
-      projectImageSource: "lib/img3.jpg",
-      gitHubLink:"https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
-  ),
-];
-
-/// =========================== API Project Tab controller================================
-var apiProjectControl=[
-  projectElement(
-      projectTitle: "Weather forecast app",
-      featuresList: ["Responsive App","Pixel Perfect"],
-      skillUsedList: ["Flutter","weathers api"],
-      projectImageSource: "lib/img4.jpg",
-      gitHubLink:"https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
-  ),
-  projectElement(
-      projectTitle: "Tech News app",
-      featuresList: ["Responsive App","Pixel Perfect"],
-      skillUsedList: ["Flutter","News api"],
-      projectImageSource: "lib/img5.jpg",
-      gitHubLink:"https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
-  ),
-  projectElement(
-      projectTitle: "Wallpaper app",
-      featuresList: ["Responsive App","Pixel Perfect"],
-      skillUsedList: ["Flutter","Pixels api"],
-      projectImageSource: "lib/img6.jpg",
-      gitHubLink:"https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
-  ),
-];
-
-/// =========================== Advance Project Tab controller================================
-var advanceProjectControl=[
-  projectElement(
-      projectTitle: "Food Ordering app",
-      featuresList: ["Responsive App","Pixel Perfect"],
-      skillUsedList: ["Flutter","Firebase","Firebase Auth","Firebase CRUD"],
-      projectImageSource: "lib/img8.jpg",
-      gitHubLink:"https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
-  ),
-  projectElement(
-      projectTitle: "Social media-Chat app",
-      featuresList: ["Responsive App","Pixel Perfect"],
-      skillUsedList: ["Flutter","Firebase","Firebase Auth","Firebase CRUD","Rest Api"],
-      projectImageSource: "lib/img7.png",
-      gitHubLink:"https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
-  ),
-];
-
+import 'projectsTAB.dart';
 
 ///============================= Mobile project section =========================
 Widget mobileProjectSection = Padding(
@@ -197,7 +55,8 @@ Widget mobileProjectSection = Padding(
                       autoPlayInterval: Duration(seconds: 2),
                     ),
                   itemBuilder: (context, index, realIndex) {
-                      var currentWidget = allProjectControl[index];
+                    List<String> FeatureList = (allProjectControl[index]["featuresList"] as List).cast<String>();
+                    List<String> SkillUdedList = (allProjectControl[index]["skillUsedList"] as List).cast<String>();
                     return Padding(
                       padding: const EdgeInsets.only(left: 8,right: 8),
                       child: Container(
@@ -206,7 +65,12 @@ Widget mobileProjectSection = Padding(
                             border: Border.all(color: Colors.black,width: 2.w),
                             borderRadius: BorderRadius.circular(10.r)
                         ),
-                        child: currentWidget,
+                        child: projectElement(
+                            projectTitle: allProjectControl[index]["projectTitle"].toString(),
+                            featuresList: FeatureList,
+                            skillUsedList: SkillUdedList,
+                            projectImageSource: allProjectControl[index]["projectImageSource"].toString(),
+                            gitHubLink:allProjectControl[index]["gitHubLink"].toString() ),
                       ),
                     );
                   },
@@ -220,7 +84,8 @@ Widget mobileProjectSection = Padding(
                         autoPlayInterval: Duration(seconds: 2),
                       ),
                       itemBuilder: (context, index, realIndex) {
-                        var currentWidget = uiProjectControl[index];
+                        List<String> FeatureList = (uiProjectControl[index]["featuresList"] as List).cast<String>();
+                        List<String> SkillUdedList = (uiProjectControl[index]["skillUsedList"] as List).cast<String>();
                         return Padding(
                           padding: const EdgeInsets.only(left: 8,right: 8),
                           child: Container(
@@ -229,7 +94,12 @@ Widget mobileProjectSection = Padding(
                                 border: Border.all(color: Colors.black,width: 2.w),
                                 borderRadius: BorderRadius.circular(10.r)
                             ),
-                            child: currentWidget,
+                            child: projectElement(
+                                projectTitle: uiProjectControl[index]["projectTitle"].toString(),
+                                featuresList: FeatureList,
+                                skillUsedList: SkillUdedList,
+                                projectImageSource: uiProjectControl[index]["projectImageSource"].toString(),
+                                gitHubLink:uiProjectControl[index]["gitHubLink"].toString() ),
                           ),
                         );
                       },
@@ -243,7 +113,8 @@ Widget mobileProjectSection = Padding(
                         autoPlayInterval: Duration(seconds: 2),
                       ),
                       itemBuilder: (context, index, realIndex) {
-                        var currentWidget = apiProjectControl[index];
+                        List<String> FeatureList = (apiProjectControl[index]["featuresList"] as List).cast<String>();
+                        List<String> SkillUdedList = (apiProjectControl[index]["skillUsedList"] as List).cast<String>();
                         return Padding(
                           padding: const EdgeInsets.only(left: 8,right: 8),
                           child: Container(
@@ -252,7 +123,12 @@ Widget mobileProjectSection = Padding(
                                 border: Border.all(color: Colors.black,width: 2.w),
                                 borderRadius: BorderRadius.circular(10.r)
                             ),
-                            child: currentWidget,
+                            child: projectElement(
+                                projectTitle: apiProjectControl[index]["projectTitle"].toString(),
+                                featuresList: FeatureList,
+                                skillUsedList: SkillUdedList,
+                                projectImageSource: apiProjectControl[index]["projectImageSource"].toString(),
+                                gitHubLink:apiProjectControl[index]["gitHubLink"].toString() ),
                           ),
                         );
                       },
@@ -266,7 +142,8 @@ Widget mobileProjectSection = Padding(
                         autoPlayInterval: Duration(seconds: 2),
                       ),
                       itemBuilder: (context, index, realIndex) {
-                        var currentWidget = advanceProjectControl[index];
+                        List<String> FeatureList = (advanceProjectControl[index]["featuresList"] as List).cast<String>();
+                        List<String> SkillUdedList = (advanceProjectControl[index]["skillUsedList"] as List).cast<String>();
                         return Padding(
                           padding: const EdgeInsets.only(left: 8,right: 8),
                           child: Container(
@@ -275,7 +152,12 @@ Widget mobileProjectSection = Padding(
                                 border: Border.all(color: Colors.black,width: 2.w),
                                 borderRadius: BorderRadius.circular(10.r)
                             ),
-                            child: currentWidget,
+                            child: projectElement(
+                                projectTitle: advanceProjectControl[index]["projectTitle"].toString(),
+                                featuresList: FeatureList,
+                                skillUsedList: SkillUdedList,
+                                projectImageSource: advanceProjectControl[index]["projectImageSource"].toString(),
+                                gitHubLink:advanceProjectControl[index]["gitHubLink"].toString() ),
                           ),
                         );
                       },
@@ -329,7 +211,7 @@ Widget projectElement({
           ),
         ),
 
-        SizedBox(height: 4.h,),
+        Expanded(child: SizedBox(height: 4.h,)),
         ElevatedButton(
             onPressed: () async{
               /// ========Project GitHub URL===========

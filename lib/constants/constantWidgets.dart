@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 const int blogsLength = 0;
-const int projectsLength = 9;
+const int projectsLength = 10;
 const int DSAproblemsLength = 54;
 
 const double coverHeight = 180;

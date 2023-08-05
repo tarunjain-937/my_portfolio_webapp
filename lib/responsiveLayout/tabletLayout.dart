@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_portfolio_webapp/constants/constantWidgets.dart';
 import 'package:my_portfolio_webapp/constants/projectsSection.dart';
+import 'package:my_portfolio_webapp/constants/projectsTAB.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -566,7 +567,7 @@ class _tabletLayoutState extends State<tabletLayout> {
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   width: double.infinity,
-                  height: 500,
+                  height: 400,
                   child: DefaultTabController(
                     length: 4,
                     child: Scaffold(
