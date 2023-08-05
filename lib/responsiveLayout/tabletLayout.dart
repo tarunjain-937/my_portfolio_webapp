@@ -567,7 +567,7 @@ class _tabletLayoutState extends State<tabletLayout> {
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   width: double.infinity,
-                  height: 400,
+                  height: 500,
                   child: DefaultTabController(
                     length: 4,
                     child: Scaffold(
@@ -596,10 +596,12 @@ class _tabletLayoutState extends State<tabletLayout> {
                                     fontWeight: FontWeight.w800, fontSize: 16),
                                 unselectedLabelColor: Colors.black),
                           ),
+
                           Expanded(
                             child: TabBarView(
                                 physics: const NeverScrollableScrollPhysics(),
                                 children: [
+                                  /// ======================= Tab 1===================
                                   Container(
                                     decoration: const BoxDecoration(
                                       borderRadius:
@@ -607,52 +609,127 @@ class _tabletLayoutState extends State<tabletLayout> {
                                       color: Color.fromRGBO(
                                           221, 230, 237, 1),
                                     ),
-                                    child: Center(
-                                        child: Container(
-                                          child: const Text("All projects tab"),
-
-                                          ///=============================== Add All projects here =====================
-                                        )),
+                                    child: ListView.builder(
+                                      scrollDirection: Axis.horizontal,
+                                        itemCount: allProjectControl.length,
+                                        physics: PageScrollPhysics(),
+                                        itemBuilder: (context, index) {
+                                          List<String> FeatureList = (allProjectControl[index]["featuresList"] as List).cast<String>();
+                                          List<String> SkillUdedList = (allProjectControl[index]["skillUsedList"] as List).cast<String>();
+                                          return Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Container(
+                                              height:200,width:300,
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(8),
+                                                border: Border.all(width: 2,color: Colors.black)
+                                              ),
+                                              child: projectElement(
+                                                projectTitle: allProjectControl[index]["projectTitle"].toString(),
+                                                featuresList: FeatureList,
+                                                skillUsedList: SkillUdedList,
+                                                projectImageSource: allProjectControl[index]["projectImageSource"].toString(),
+                                                gitHubLink:allProjectControl[index]["gitHubLink"].toString() ),),
+                                          );
+                                        },),
                                   ),
+                                  /// ======================= Tab 2===================
                                   Container(
                                     decoration: const BoxDecoration(
                                       borderRadius:
-                                          BorderRadius.all(Radius.circular(10)),
+                                      BorderRadius.all(Radius.circular(10)),
                                       color: Color.fromRGBO(
                                           221, 230, 237, 1),
                                     ),
-                                    child: Center(
-                                        child: Container(
-                                      child: const Text("UI projects tab"),
-
-                                      ///=============================== Add UI projects here =====================
-                                    )),
+                                    child: ListView.builder(
+                                      scrollDirection: Axis.horizontal,
+                                      itemCount: uiProjectControl.length,
+                                      physics: PageScrollPhysics(),
+                                      itemBuilder: (context, index) {
+                                        List<String> FeatureList = (uiProjectControl[index]["featuresList"] as List).cast<String>();
+                                        List<String> SkillUdedList = (uiProjectControl[index]["skillUsedList"] as List).cast<String>();
+                                        return Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Container(
+                                            height:200,width:300,
+                                            decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(8),
+                                                border: Border.all(width: 2,color: Colors.black)
+                                            ),
+                                            child: projectElement(
+                                                projectTitle: uiProjectControl[index]["projectTitle"].toString(),
+                                                featuresList: FeatureList,
+                                                skillUsedList: SkillUdedList,
+                                                projectImageSource: uiProjectControl[index]["projectImageSource"].toString(),
+                                                gitHubLink: uiProjectControl[index]["gitHubLink"].toString() ),),
+                                        );
+                                      },),
                                   ),
+
+                                  /// ======================= Tab 3===================
                                   Container(
                                     decoration: const BoxDecoration(
                                       borderRadius:
-                                          BorderRadius.all(Radius.circular(10)),
-                                      color: Color.fromRGBO(221, 230, 237, 1),
+                                      BorderRadius.all(Radius.circular(10)),
+                                      color: Color.fromRGBO(
+                                          221, 230, 237, 1),
                                     ),
-                                    child: Center(
-                                        child: Container(
-                                      child: const Text("api projects tab"),
-
-                                      ///=============================== Add api projects here =====================
-                                    )),
+                                    child: ListView.builder(
+                                      scrollDirection: Axis.horizontal,
+                                      itemCount: apiProjectControl.length,
+                                      physics: PageScrollPhysics(),
+                                      itemBuilder: (context, index) {
+                                        List<String> FeatureList = (apiProjectControl[index]["featuresList"] as List).cast<String>();
+                                        List<String> SkillUdedList = (apiProjectControl[index]["skillUsedList"] as List).cast<String>();
+                                        return Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Container(
+                                            height:200,width:300,
+                                            decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(8),
+                                                border: Border.all(width: 2,color: Colors.black)
+                                            ),
+                                            child: projectElement(
+                                                projectTitle: apiProjectControl[index]["projectTitle"].toString(),
+                                                featuresList: FeatureList,
+                                                skillUsedList: SkillUdedList,
+                                                projectImageSource: apiProjectControl[index]["projectImageSource"].toString(),
+                                                gitHubLink: apiProjectControl[index]["gitHubLink"].toString() ),),
+                                        );
+                                      },),
                                   ),
+
+                                  /// ======================= Tab 4===================
                                   Container(
                                     decoration: const BoxDecoration(
                                       borderRadius:
-                                          BorderRadius.all(Radius.circular(10)),
-                                      color: Color.fromRGBO(221, 230, 237, 1),
+                                      BorderRadius.all(Radius.circular(10)),
+                                      color: Color.fromRGBO(
+                                          221, 230, 237, 1),
                                     ),
-                                    child: Center(
-                                        child: Container(
-                                      child: const Text("Advance projects tab"),
-
-                                      ///=============================== Add advance projects here =====================
-                                    )),
+                                    child: ListView.builder(
+                                      scrollDirection: Axis.horizontal,
+                                      itemCount: advanceProjectControl.length,
+                                      physics: PageScrollPhysics(),
+                                      itemBuilder: (context, index) {
+                                        List<String> FeatureList = (advanceProjectControl[index]["featuresList"] as List).cast<String>();
+                                        List<String> SkillUdedList = (advanceProjectControl[index]["skillUsedList"] as List).cast<String>();
+                                        return Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Container(
+                                            height:200,width:300,
+                                            decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(8),
+                                                border: Border.all(width: 2,color: Colors.black)
+                                            ),
+                                            child: projectElement(
+                                                projectTitle: advanceProjectControl[index]["projectTitle"].toString(),
+                                                featuresList: FeatureList,
+                                                skillUsedList: SkillUdedList,
+                                                projectImageSource: advanceProjectControl[index]["projectImageSource"].toString(),
+                                                gitHubLink: advanceProjectControl[index]["gitHubLink"].toString() ),),
+                                        );
+                                      },),
                                   ),
                                 ]),
                           ),
@@ -1059,6 +1136,71 @@ class _tabletLayoutState extends State<tabletLayout> {
               Text(level,style: TextStyle(fontWeight: FontWeight.w400,fontSize: 16),)
             ],
           )
+        ],
+      ),
+    );
+  }
+
+  Widget projectElement({
+    required String projectTitle,
+    required List<String> featuresList,
+    required List<String> skillUsedList,
+    required String projectImageSource,
+    required String gitHubLink,
+  }){
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(height:150,width: double.infinity,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(image: AssetImage(projectImageSource),fit: BoxFit.cover)
+              )),
+          SizedBox(height: 8),
+          Text(projectTitle,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 22,color: Colors.black)),
+          SizedBox(height: 6,),
+          Container(
+            width: double.infinity,
+            height: 150,
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Features :-",style: TextStyle(fontWeight: FontWeight.w800,fontSize: 18,color: Colors.black)),
+                  SizedBox(height: 6,),
+                  for(int i=0;i<featuresList.length;i++)
+                    Text("${i+1}} ${featuresList[i]}",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 15,color: Colors.black)),
+                  SizedBox(height: 6,),
+                  Text("Skill Used :-",style: TextStyle(fontWeight: FontWeight.w800,fontSize: 18,color: Colors.black)),
+                  SizedBox(height: 6,),
+                  for(int i=0;i<skillUsedList.length;i++)
+                    Text("${i+1}} ${skillUsedList[i]}",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 15,color: Colors.black)),
+                ],
+              ),
+            ),
+          ),
+
+          Expanded(child: SizedBox(height: 4,)),
+          ElevatedButton(
+              onPressed: () async{
+                /// ========Project GitHub URL===========
+                var url = Uri.parse(gitHubLink);
+                if (await canLaunchUrl(url)) {
+                  await launchUrl(url);
+                } else {
+                  throw 'Could not launch $url';
+                }
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("GitHub Code",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                  Expanded(child: SizedBox()),
+                  FaIcon(FontAwesomeIcons.code,size: 20,color: Colors.black,),
+                ],
+              ))
         ],
       ),
     );
