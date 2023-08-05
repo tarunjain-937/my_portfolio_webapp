@@ -28,7 +28,7 @@ var allProjectControl=[
       gitHubLink:"https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
   ),
   projectElement(
-      projectTitle: "Weather forcast app",
+      projectTitle: "Weather forecast app",
       featuresList: ["Responsive App","Pixel Perfect"],
       skillUsedList: ["Flutter","weathers api"],
       projectImageSource: "lib/img4.jpg",
@@ -107,7 +107,7 @@ var uiProjectControl=[
 /// =========================== API Project Tab controller================================
 var apiProjectControl=[
   projectElement(
-      projectTitle: "Weather forcast app",
+      projectTitle: "Weather forecast app",
       featuresList: ["Responsive App","Pixel Perfect"],
       skillUsedList: ["Flutter","weathers api"],
       projectImageSource: "lib/img4.jpg",

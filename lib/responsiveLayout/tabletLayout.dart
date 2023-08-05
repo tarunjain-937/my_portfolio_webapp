@@ -1,6 +1,8 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_portfolio_webapp/constants/constantWidgets.dart';
+import 'package:my_portfolio_webapp/constants/projectsSection.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -600,16 +602,16 @@ class _tabletLayoutState extends State<tabletLayout> {
                                   Container(
                                     decoration: const BoxDecoration(
                                       borderRadius:
-                                          BorderRadius.all(Radius.circular(10)),
+                                      BorderRadius.all(Radius.circular(10)),
                                       color: Color.fromRGBO(
                                           221, 230, 237, 1),
                                     ),
                                     child: Center(
                                         child: Container(
-                                      child: const Text("All projects tab"),
+                                          child: const Text("All projects tab"),
 
-                                      ///=============================== Add all projects here =====================
-                                    )),
+                                          ///=============================== Add All projects here =====================
+                                        )),
                                   ),
                                   Container(
                                     decoration: const BoxDecoration(
