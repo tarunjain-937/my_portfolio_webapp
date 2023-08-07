@@ -61,7 +61,7 @@ var allProjectControl= [
     "featuresList": ["Responsive game"],
     "skillUsedList": ["Flutter", "Dart logic"],
     "projectImageSource": "lib/img2.jpg",
-    "gitHubLink": "https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
+    "gitHubLink": "https://github.com/tarunjain-937/Tic_Tac_Toe_Game"
   },
   {
     "projectTitle": "Facebook UI clone",
