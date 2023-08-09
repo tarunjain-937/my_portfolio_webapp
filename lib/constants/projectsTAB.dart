@@ -23,10 +23,10 @@ var allProjectControl= [
   },
   {
     "projectTitle": "Tech News app",
-    "featuresList": ["Responsive App", "Pixel Perfect"],
-    "skillUsedList": ["Flutter", "News api"],
+    "featuresList": ["Responsive App", "Pixel Perfect", "Newsapi.org api","Category News"],
+    "skillUsedList": ["Flutter", "Postman",],
     "projectImageSource": "lib/img5.jpg",
-    "gitHubLink": "https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
+    "gitHubLink": "https://github.com/tarunjain-937/Indian_News_app"
   },
   {
     "projectTitle": "Weather forecast app",
@@ -93,7 +93,7 @@ var uiProjectControl=[
     "featuresList": ["Responsive game"],
     "skillUsedList": ["Flutter", "Dart logic"],
     "projectImageSource": "lib/img2.jpg",
-    "gitHubLink": "https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
+    "gitHubLink": "https://github.com/tarunjain-937/Tic_Tac_Toe_Game"
   },
   {
     "projectTitle": "Facebook UI clone",
@@ -116,10 +116,10 @@ var apiProjectControl=[
   },
   {
     "projectTitle": "Tech News app",
-    "featuresList": ["Responsive App", "Pixel Perfect"],
-    "skillUsedList": ["Flutter", "News api"],
+    "featuresList": ["Responsive App", "Pixel Perfect", "Newsapi.org api","Category News"],
+    "skillUsedList": ["Flutter", "Postman",],
     "projectImageSource": "lib/img5.jpg",
-    "gitHubLink": "https://github.com/tarunjain-937/responsive_whatsapp_ui_clone"
+    "gitHubLink": "https://github.com/tarunjain-937/Indian_News_app"
   },
 
   {
